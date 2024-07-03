@@ -7,7 +7,7 @@ from scipy import signal
 import os
 
 
-def gen_time_frame_19(protocol_path, read_audio_path, write_audio_path, duration, status: str):
+def gen_time_frame_19(protocol_path, read_audio_path, write_audio_path, duration, status):
     sub_path = write_audio_path + status + '_' + str(duration) + '/'
     if not os.path.exists(sub_path):
         os.makedirs(sub_path)
