@@ -111,7 +111,7 @@ if __name__ == '__main__':
     # TODO: ASVspoof2019 data preparation
 
     # directory info of ASVspoof2019 dataset
-    root_path = 'E:/POST/DeepFakeAudio/DATASETLER/ASV2019/LA/'
+    root_path = '../LA/'
     train_protocol_path = root_path + 'ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.train.trl.txt'
     dev_protocol_path   = root_path + 'ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.dev.trl.txt'
     eval_protocol_path  = root_path + 'ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.eval.trl.txt'
