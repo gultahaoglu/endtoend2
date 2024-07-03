@@ -35,7 +35,7 @@ if __name__ == '__main__':
             dev_data_path = root_path + 'data/dev_6/'
             eval_data_path = root_path + 'data/eval_6/'
         else:
-            root_path = 'E:/POST/DeepFakeAudio/DATASETLER/ASV2019/LA/'
+            root_path = '../LA/'
             train_protocol_file_path = root_path + \
                 'ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.train.trl.txt'
             dev_protocol_file_path = root_path + \
@@ -56,7 +56,7 @@ if __name__ == '__main__':
             dev_data_path = root_path + 'data/dev_6.4_cqt/'
             eval_data_path = root_path + 'data/eval_6.4_cqt/'
         else:
-            root_path = 'E:/POST/DeepFakeAudio/DATASETLER/ASV2019/LA/'
+            root_path = '../LA/'
             train_protocol_file_path = root_path + \
                 'ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.train.trl.txt'
             dev_protocol_file_path = root_path + \
