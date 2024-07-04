@@ -105,7 +105,7 @@ def cal_roc_eer(probs, show_plot=True):
 if __name__ == '__main__':
 
     test_device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-    protocol_file_path = 'E:/POST/DeepFakeAudio/DATASETLER/ASV2019/LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.eval.trl.txt'
+    protocol_file_path = '../LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.eval.trl.txt'
     data_path = './data/eval_6/'
 
    # 'F:/ASVSpoof2019/LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.train.trn.txt'
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     num_total_learnable_params = sum(i.numel() for i in Net.parameters() if i.requires_grad)
     print('Number of learnable params: {}.'.format(num_total_learnable_params))
 
-    check_point = torch.load('./train_models_timeOrj/99.pth')
+    check_point = torch.load('./train_models_time_orj /99.pth')
     Net.load_state_dict(check_point['model_state_dict'])
 
     accuracy, probabilities = asv_cal_accuracies(protocol_file_path, data_path, Net, test_device, data_type='time_frame', dataset=19)
