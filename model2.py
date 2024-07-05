@@ -59,10 +59,11 @@ class SSDNet1D(nn.Module):
         x = self.RSM3(x)
         x = F.max_pool1d(x, kernel_size=4)
         x = self.RSM4(x)
-        x = F.max_pool1d(x, kernel_size=375)
+        x = F.max_pool1d(x, kernel_size=4)  # Bu kernel_size'ı orijinal verinizin boyutuna göre ayarlayabilirsiniz.
 
-        x = torch.flatten(x, start_dim=1)
-        x, _ = self.lstm(x.unsqueeze(-1))  # LSTM katmanı
+        # LSTM katmanına uygun girdi boyutu (batch_size, seq_len, input_size)
+        x = x.permute(0, 2, 1)  # (batch_size, input_size, seq_len) -> (batch_size, seq_len, input_size)
+        x, _ = self.lstm(x)  # LSTM katmanı
         x = x[:, -1, :]  # Son hidden state
         x = F.leaky_relu(self.fc1(x))
         x = self.dropout(x)  # Dropout eklendi
